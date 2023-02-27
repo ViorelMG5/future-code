@@ -37,8 +37,7 @@ export default function SetUser() {
     await addDoc(collection(db, "users"), {
       uid: user?.uid,
       email: user?.email,
-      followers: 0,
-      following: 0,
+      projects: 0,
       profilePic: photoURL,
       username: displayName,
     });
@@ -70,17 +69,17 @@ export default function SetUser() {
       </Head>
       <main className=" min-h-screen min-w-screen px-[5vw] md:px-0 grid place-content-center">
         <form
-          className="items-center  max-w-[700px]  shadow-lg p-4 mx-auto "
+          className="max-w-[700px]  shadow-lg p-4  w-full md:mx-auto "
           onSubmit={handleSubmit(onSubmit)}
         >
           <Image
             src={loginImg}
             alt="login image"
-            className="rounded-md mb-4 object-cover"
+            className="rounded-md mb-4 object-cover w-full"
           />
-          <div className="space-y-3 flex flex-col ">
+          <div className="space-y-3 flex flex-col w-full ">
             <>
-              <h1 className="text-xl font-semibold">
+              <h1 className="text-xl font-semibold text-center">
                 Now let's set up your profile!
               </h1>
               <input
@@ -96,7 +95,7 @@ export default function SetUser() {
               <input
                 id="profilePic"
                 accept=".png, .svg, .jpg"
-                className="basic-input"
+                className="basic-input w-full"
                 type="file"
                 required
                 {...register("profilePic", {
