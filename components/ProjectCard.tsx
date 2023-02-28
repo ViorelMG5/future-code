@@ -52,7 +52,7 @@ export default function ProjectCard({
       <div
         className={` p-2 border  ${
           layoutMode === "grid-layout"
-            ? "justify-between "
+            ? "justify-between grow"
             : " p-4 lg:px-6 shrink-0 flex-[3] flex flex-col justify-center"
         }`}
       >
