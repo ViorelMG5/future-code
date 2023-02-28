@@ -27,51 +27,50 @@ export default function Login() {
 
   if (user) {
     router.push("/admin-panel");
-  }
-
-  return (
-    <>
-      <Head>
-        <title>Welcome to Nicejob</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-      <main className="min-w-screen min-h-screen grid place-content-center">
-        <div className="shadow-lg max-w-[700px] ml-4 mr-4  p-4 md:p-10 rounded-md ">
-          <Image
-            className="mx-auto max-w-xl w-full"
-            src={welcomeImg}
-            alt="welcome image"
-          />
-          <form onSubmit={handleSubmit(onSubmit)}>
-            <div className=" flex flex-col items-center mx-auto">
-              <div className="mb-10">
-                <h1 className="text-center text-xl font-bold ">Welcome!</h1>
-                <p className="text-center">Now, what's the magic word?</p>
-              </div>
-              <div className=" flex flex-col w-full">
-                <input
-                  className="basic-input"
-                  type="email"
-                  required
-                  placeholder="Email"
-                  {...register("email")}
-                />
-                <input
-                  required
-                  className="basic-input mt-4"
-                  type="password"
-                  placeholder="Password"
-                  {...register("password")}
-                />
-                <button
-                  type="submit"
-                  onClick={() => setLogin(true)}
-                  className="btn-primary mt-6"
-                >
-                  Log in
-                </button>
-              </div>
-              {/* <button
+  } else
+    return (
+      <>
+        <Head>
+          <title>Welcome to Nicejob</title>
+          <link rel="icon" href="/favicon.ico" />
+        </Head>
+        <main className="min-w-screen min-h-screen grid place-content-center pt-28">
+          <div className="shadow-lg max-w-[700px] ml-4 mr-4  p-4 md:p-10 rounded-md ">
+            <Image
+              className="mx-auto max-w-lg w-full"
+              src={welcomeImg}
+              alt="welcome image"
+            />
+            <form onSubmit={handleSubmit(onSubmit)}>
+              <div className=" flex flex-col items-center mx-auto">
+                <div className="mb-10">
+                  <h1 className="text-center text-xl font-bold ">Welcome!</h1>
+                  <p className="text-center">Now, what's the magic word?</p>
+                </div>
+                <div className=" flex flex-col w-full">
+                  <input
+                    className="basic-input"
+                    type="email"
+                    required
+                    placeholder="Email"
+                    {...register("email")}
+                  />
+                  <input
+                    required
+                    className="basic-input mt-4"
+                    type="password"
+                    placeholder="Password"
+                    {...register("password")}
+                  />
+                  <button
+                    type="submit"
+                    onClick={() => setLogin(true)}
+                    className="btn-primary mt-6"
+                  >
+                    Log in
+                  </button>
+                </div>
+                {/* <button
                 onClick={() => setLogin(false)}
                 type="submit"
                 className="text-[15px] mt-5 "
@@ -79,10 +78,10 @@ export default function Login() {
                 Don't have an account?{" "}
                 <span className="font-semibold text-[#42A9E4]">Sign up.</span>
               </button> */}
-            </div>
-          </form>
-        </div>
-      </main>
-    </>
-  );
+              </div>
+            </form>
+          </div>
+        </main>
+      </>
+    );
 }
