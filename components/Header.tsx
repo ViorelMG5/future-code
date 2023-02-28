@@ -24,7 +24,7 @@ export default function Header({ profilePic }: Props) {
             <AddProjectModal editProjects={false} />
           ) : (
             <button className="bg-[#FF914D] py-2 rounded-md md:px-8 text-white font-medium px-4">
-              Work With Me
+              Contact
             </button>
           )}
           <Link href="/admin" className="cursor-pointer">

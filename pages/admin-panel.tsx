@@ -35,7 +35,7 @@ export default function AdminPanel({ projects }: Props) {
 
   return (
     <main className="container mx-auto pt-28 px-4">
-      <div className="flex items-center gap-4 py-2 px-2 my-4 md:px-10 justify-between rounded-xl bg-blue-100">
+      <div className="flex md:items-center flex-col md:flex-row gap-4 py-4 px-2 my-4 md:px-10 justify-between rounded-xl bg-blue-100">
         <span className="text-xl ">
           Welcome Back!, here is where you can edit/delete your projects
         </span>

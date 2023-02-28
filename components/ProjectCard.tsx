@@ -2,7 +2,6 @@ import { DocumentData } from "firebase/firestore";
 import Image from "next/image";
 import Link from "next/link";
 import { BsGlobe } from "react-icons/bs";
-import { MdEdit } from "react-icons/md";
 import { FaTrash } from "react-icons/fa";
 import { useState } from "react";
 import useProjectUtility from "@/hooks/useProjectUtility";
@@ -62,7 +61,9 @@ export default function ProjectCard({
           <Link
             href={project.link}
             target="_blank"
-            className="font-medium text-orange-500 flex items-center gap-2"
+            className={`font-medium text-orange-500 flex items-center gap-2 ${
+              editProjects ? "pointer-events-none" : ""
+            }`}
           >
             Visit Website
             <BsGlobe />
