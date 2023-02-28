@@ -21,7 +21,7 @@ export default function Login() {
     handleSubmit,
     formState: { errors },
   } = useForm<Inputs>();
-
+  // Submiting the form
   const onSubmit: SubmitHandler<Inputs> = async ({ email, password }) =>
     login ? await signIn(email, password) : await signUp(email, password);
 
@@ -31,7 +31,7 @@ export default function Login() {
     return (
       <>
         <Head>
-          <title>Welcome to Nicejob</title>
+          <title>Welcome to FutureCode</title>
           <link rel="icon" href="/favicon.ico" />
         </Head>
         <main className="min-w-screen min-h-screen grid place-content-center pt-28">

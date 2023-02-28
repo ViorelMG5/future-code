@@ -18,6 +18,8 @@ interface Props {
   editProjects: boolean;
   project?: DocumentData;
 }
+
+// Using this component both for uploading and editing the project
 export default function AddProjectModal({ editProjects, project }: Props) {
   const [open, setOpen] = useState(false);
   const [imagePreview, setImagePreview] = useState<string | null>();
@@ -25,6 +27,8 @@ export default function AddProjectModal({ editProjects, project }: Props) {
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
   const { uploadProject, updateProject } = useProjectUtility();
+
+  // Making sure there is a valid URL on link input
   const schema = yup.object().shape({
     link: yup.string().url(),
   });
@@ -44,7 +48,7 @@ export default function AddProjectModal({ editProjects, project }: Props) {
     resolver: yupResolver(schema),
   });
 
-  console.log(project);
+  // Submiting the form, checking if editProject is true and update the existing project or create a new one
   const onSubmit: SubmitHandler<Inputs> = async ({
     title,
     link,
@@ -81,6 +85,7 @@ export default function AddProjectModal({ editProjects, project }: Props) {
       }
     };
   };
+
   return (
     <div>
       <div className="flex gap-4 " onClick={handleOpen}>
@@ -140,7 +145,7 @@ export default function AddProjectModal({ editProjects, project }: Props) {
                 onChange={handleImageChange}
               />
             </label>
-            {imagePreview && (
+            {imagePreview && !editProjects && (
               <button
                 onClick={() => setImagePreview(null)}
                 className="text-red-500"

@@ -6,7 +6,7 @@ import { getDownloadURL, getStorage, ref, uploadBytes } from "firebase/storage";
 import Head from "next/head";
 import Image from "next/image";
 import loginImg from "../public/login.jpg";
-import { Router, useRouter } from "next/router";
+import { useRouter } from "next/router";
 import { useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 
