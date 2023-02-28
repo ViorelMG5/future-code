@@ -31,7 +31,9 @@ export default function ProjectCard({
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       className={`card rounded-xl relative  overflow-hidden ${
-        layoutMode === "grid-layout" ? "flex flex-col " : "list-card "
+        layoutMode === "grid-layout"
+          ? "flex flex-col "
+          : "list-card max-w-[700px] "
       }`}
     >
       <div
@@ -49,13 +51,13 @@ export default function ProjectCard({
       </div>
 
       <div
-        className={` p-2 border grow ${
+        className={` p-2 border  ${
           layoutMode === "grid-layout"
             ? "justify-between "
-            : " p-4 lg:px-28 shrink-0 flex-[3]"
+            : " p-4 lg:px-6 shrink-0 flex-[3] flex flex-col justify-center"
         }`}
       >
-        <h2 className="text-lg">{project.title}</h2>
+        <h2 className="text-xl">{project.title}</h2>
         {project.link && (
           <Link
             href={project.link}

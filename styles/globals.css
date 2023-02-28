@@ -12,6 +12,9 @@
   .list-card {
     @apply flex;
   }
+  .list-card img {
+    @apply object-cover;
+  }
 
   .basic-input {
     @apply border p-2 rounded-md  focus:outline-[#019bf4];
