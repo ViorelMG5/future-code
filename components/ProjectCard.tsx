@@ -70,8 +70,8 @@ export default function ProjectCard({
           </Link>
         )}
       </div>
-      {editProjects && isHovered && (
-        <div className="absolute bg-[#000000]/50 w-full h-full grid place-content-center z-10">
+      {editProjects && (
+        <div className="absolute bg-[#000000]/30 w-full h-full grid place-content-center z-10">
           <div className="flex items-center gap-4">
             <AddProjectModal editProjects={true} project={project} />
             <FaTrash
